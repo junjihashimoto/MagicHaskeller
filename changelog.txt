@@ -1,0 +1,49 @@
+0.9.6.7:
+  * add functions for incremental learning to the library
+
+0.9.6.6.1:
+  * support GHC 8.0
+
+0.9.6.6:
+  * enable selecting functions individually
+
+0.9.6.5:
+  * Fix some bugs in CGI. Now you do not need to use GHC 7.4 even for building the CGI.
+
+0.9.6.4.8:
+  * Fix some bugs and misfeatures in CGI
+  * Replace the "Interpreted as ..." with more informative "Corrected with ..." in CGI
+
+0.9.6.4.7:
+  * Add this changelog.txt
+  * Implement copy by drag-and-drop
+  * Add the build time to versionInfo, which is shown in the CGI frontend and by the :version command
+  * Use the time package instead of old-time, and use UTC
+
+0.9.6.4.6:
+  * Fix the stupid bug of regarding Int as RealFrac, which crept into 0.9.6.4
+  * Enable documentation of language constructs, such as let, in, if, then, else, etc., when typed in as a word.
+  * Fix documentation of operators starting with `:', which used to cause the `command unknown' error
+
+0.9.6.4.5:
+  * Fix and support ProgGen again
+
+0.9.6.4.4:
+  * Support hscolour, by converting Japanese comments into UTF-8
+  * Use optLevel 2 (corresponding to -O2) when compiling the query to the server
+  * Remove -O2, -fvia-C, and Flag GHC7 from the .cabal file
+
+0.9.6.4.3:
+  * Fix indentation in the Cabal file, which caused the wrong dependency
+  * Suppress warnings
+  * Add package description
+
+0.9.6.4.2:
+  * Support GHC 7.10
+  * Bundle the `predicates' files
+
+0.9.6.4.1:
+  * Make buildable with Windows
+
+0.9.6.4:
+  * many changes, which may be itemized here in the future

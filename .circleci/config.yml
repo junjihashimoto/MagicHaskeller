@@ -1,0 +1,40 @@
+version: 2
+
+jobs:
+  stack-build:
+    docker:
+      - image: "ubuntu:18.04"
+    steps:
+      - run: apt update -qq && apt install -y cmake wget unzip git libtinfo-dev
+      - checkout
+      - run: wget -qO- https://get.haskellstack.org/ | sh
+      - run:
+          name: stack build
+          command: stack build --jobs 2
+          no_output_timeout: 15m
+      - run: stack exec MagicHaskeller
+  cabal-build:
+    docker:
+      - image: "ubuntu:18.04"
+    environment:
+      PATH: /opt/ghc/bin:/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin
+    steps:
+      - run: echo $LD_LIBRARY_PATH
+      - run: apt update -qq && apt install -y cmake curl wget unzip git libtinfo-dev
+      - run: apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages install locales software-properties-common apt-transport-https
+      - run: add-apt-repository ppa:hvr/ghc
+      - run: apt-get update -qq && apt-get -y --allow-downgrades --allow-remove-essential --allow-change-held-packages install build-essential zlib1g-dev liblapack-dev libblas-dev ghc-8.0.2 cabal-install-head devscripts debhelper
+      - checkout
+      - run: ./setup-cabal.sh
+      - run: cabal new-update
+      - run:
+          name: cabal new-build all
+          command: cabal new-build all --jobs=2
+          no_output_timeout: 15m
+      - run: cabal new-exec MagicHaskeller
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "stack-build"
+      - "cabal-build"

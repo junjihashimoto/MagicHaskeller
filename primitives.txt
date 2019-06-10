@@ -1,0 +1,205 @@
+## Lines starting with # will be ignored, so you can exclude individual functions by commenting them out. The number at the beginning of each line represents the priority, where 0 means the most prioritized.
+0 1 :: Ratio Int
+0 10 :: Ratio Int
+0 100 :: Ratio Int
+0 1000 :: Ratio Int
+0 succ :: Ratio Int -> Ratio Int
+0 negate :: Ratio Int -> Ratio Int
+0 abs :: Ratio Int -> Ratio Int
+0 sum :: (->) ([Ratio Int]) (Ratio Int)
+0 product :: (->) ([Ratio Int]) (Ratio Int)
+0 (+) :: Ratio Int -> Ratio Int -> Ratio Int
+0 (-) :: Ratio Int -> Ratio Int -> Ratio Int
+0 (*) :: Ratio Int -> Ratio Int -> Ratio Int
+0 (/) :: Ratio Int -> Ratio Int -> Ratio Int
+0 fromIntegral :: Int -> Ratio Int
+0 properFraction :: (->) (Ratio Int) ((Int, Ratio Int))
+0 round :: (->) (Ratio Int) Int
+0 floor :: (->) (Ratio Int) Int
+0 ceiling :: (->) (Ratio Int) Int
+0 (^^) :: Ratio Int -> Int -> Ratio Int
+0 (%) :: Int -> Int -> Ratio Int
+0 numerator :: (->) (Ratio Int) Int
+0 denominator :: (->) (Ratio Int) Int
+0 [] :: forall a . [a]
+0 (:) :: forall a . a -> [a] -> [a]
+0 foldr
+0 drop 1
+0 0 :: Int
+0 (1 +) :: Int -> Int
+0 \n x f -> iterate f x !! (n::Int)
+0 Nothing :: forall a . Maybe a
+0 Just :: forall a . a -> Maybe a
+0 maybe
+0 True :: Bool
+0 False :: Bool
+0 iF :: forall a . (->) Bool (a -> a -> a)
+0 (+) :: (->) Int ((->) Int Int)
+0 (&&) :: (->) Bool ((->) Bool Bool)
+0 (||) :: (->) Bool ((->) Bool Bool)
+0 not :: (->) Bool Bool
+0 (-) :: Int -> Int -> Int
+0 (*) :: Int -> Int -> Int
+0 map
+0 (++) :: forall a . (->) ([a]) ([a] -> [a])
+0 filter :: forall a . (a -> Bool) -> [a] -> [a]
+0 concat :: forall a . (->) ([[a]]) ([a])
+0 concatMap
+0 length :: forall a . (->) ([a]) Int
+0 replicate :: forall a . Int -> a -> [a]
+0 take :: forall a . Int -> [a] -> [a]
+0 drop :: forall a . Int -> [a] -> [a]
+0 takeWhile :: forall a . (a -> Bool) -> [a] -> [a]
+0 dropWhile :: forall a . (a -> Bool) -> [a] -> [a]
+0 reverse :: forall a . [a] -> [a]
+0 and :: (->) ([Bool]) Bool
+0 or :: (->) ([Bool]) Bool
+0 any
+0 all
+0 zipWith
+0 null :: forall a . (->) ([a]) Bool
+0 abs :: (->) Int Int
+0 foldl
+0 total head
+0 total last
+0 total init
+0 enumFromTo :: Int -> Int -> [Int]
+0 enumFromTo :: Char -> Char -> [Char]
+0 fmap :: forall a b . (a -> b) -> (->) (Maybe a) (Maybe b)
+0 either
+0 gcd :: Int -> Int -> Int
+0 lcm :: Int -> Int -> Int
+0 sum :: (->) ([Int]) Int
+0 product :: (->) ([Int]) Int
+0 (==)
+0 (/=)
+0 compare
+0 (<=)
+0 (<)
+0 max
+0 min
+0 sortBy :: forall a . (a -> a -> Ordering) -> [a] -> [a]
+0 nubBy :: forall a . (a -> a -> Bool) -> [a] -> [a]
+0 deleteBy :: forall a . (a -> a -> Bool) -> a -> [a] -> [a]
+0 dropWhileEnd :: forall a . (a -> Bool) -> [a] -> [a]
+0 transpose :: forall a . [[a]] -> [[a]]
+0 toUpper :: (->) Char Char
+0 toLower :: (->) Char Char
+0 ord :: Char -> Int
+0 isControl :: (->) Char Bool
+0 isSpace :: (->) Char Bool
+0 isLower :: (->) Char Bool
+0 isUpper :: (->) Char Bool
+0 isAlpha :: (->) Char Bool
+0 isAlphaNum :: (->) Char Bool
+0 isDigit :: (->) Char Bool
+0 isSymbol :: (->) Char Bool
+0 isPunctuation :: (->) Char Bool
+0 isPrint :: (->) Char Bool
+0 1 :: Int
+0 2 :: Int
+0 3 :: Int
+0 ' ' :: Char
+0 1 :: Double
+0 10 :: Double
+0 100 :: Double
+0 1000 :: Double
+0 succ :: Double -> Double
+0 negate :: Double -> Double
+0 abs :: Double -> Double
+0 signum :: Double -> Double
+0 recip :: Double -> Double
+0 sum :: (->) ([Double]) Double
+0 product :: (->) ([Double]) Double
+0 (+) :: Double -> Double -> Double
+0 (-) :: Double -> Double -> Double
+0 (*) :: Double -> Double -> Double
+0 (/) :: Double -> Double -> Double
+0 fromIntegral :: Int -> Double
+0 properFraction :: (->) Double ((Int, Double))
+0 round :: (->) Double Int
+0 floor :: (->) Double Int
+0 ceiling :: (->) Double Int
+0 truncate :: (->) Double Int
+0 (^^) :: Double -> Int -> Double
+0 pi :: Double
+1 lines :: [Char] -> [[Char]]
+1 words :: [Char] -> [[Char]]
+1 unlines :: [[Char]] -> [Char]
+1 unwords :: [[Char]] -> [Char]
+1 scanl :: forall a b . (a -> b -> a) -> a -> [b] -> [a]
+1 scanr :: forall a b . (a -> b -> b) -> b -> [a] -> [b]
+1 scanl1 :: forall a . (a -> a -> a) -> [a] -> [a]
+1 scanr1 :: forall a . (a -> a -> a) -> [a] -> [a]
+1 show :: Int -> [Char]
+1 (,) :: forall a b . a -> b -> (a, b)
+1 uncurry
+1 elem
+1 group
+1 nub
+1 find :: forall a . (a -> Bool) -> [a] -> Maybe a
+1 findIndex
+1 findIndices
+1 deleteFirstsBy :: forall a . (a -> a -> Bool) -> [a] -> [a] -> [a]
+1 unionBy :: forall a . (a -> a -> Bool) -> (->) ([a]) ([a] -> [a])
+1 intersectBy :: forall a . (a -> a -> Bool) -> (->) ([a]) ([a] -> [a])
+1 groupBy :: forall a . (a -> a -> Bool) -> [a] -> [[a]]
+1 insertBy :: forall a . (a -> a -> Ordering) -> a -> [a] -> [a]
+1 isOctDigit :: (->) Char Bool
+1 isHexDigit :: (->) Char Bool
+1 catMaybes :: forall a . [Maybe a] -> [a]
+1 listToMaybe :: forall a . (->) ([a]) (Maybe a)
+1 maybeToList :: forall a . (->) (Maybe a) ([a])
+1 exp :: Double -> Double
+1 log :: Double -> Double
+1 sqrt :: Double -> Double
+1 (**) :: Double -> Double -> Double
+1 logBase :: Double -> Double -> Double
+1 sin :: Double -> Double
+1 cos :: Double -> Double
+1 tan :: Double -> Double
+1 asin :: Double -> Double
+1 acos :: Double -> Double
+1 atan :: Double -> Double
+1 sinh :: Double -> Double
+1 cosh :: Double -> Double
+1 tanh :: Double -> Double
+1 asinh :: Double -> Double
+1 acosh :: Double -> Double
+1 atanh :: Double -> Double
+1 floatDigits :: Double -> Int
+1 exponent :: Double -> Int
+1 significand :: Double -> Double
+1 scaleFloat :: Int -> Double -> Double
+1 atan2 :: Double -> Double -> Double
+2 (,,) :: forall a b c . a -> b -> c -> (a, b, c)
+2 Left :: forall a b . a -> Either a b
+2 Right :: forall b a . b -> Either a b
+2 zip :: forall a b . (->) ([a]) ((->) ([b]) ([(a, b)]))
+2 zip3 :: forall a b c . (->) ([a]) ((->) ([b]) ((->) ([c]) ([(a, b, c)])))
+2 unzip :: forall a b . (->) ([(a, b)]) (([a], [b]))
+2 unzip3 :: forall a b c . (->) ([(a, b, c)]) (([a], [b], [c]))
+2 odd :: Int -> Bool
+2 even :: Int -> Bool
+2 isPrefixOf
+2 isSuffixOf
+2 isInfixOf
+2 stripPrefix
+2 lookup
+2 sort
+2 intersperse :: forall a . a -> [a] -> [a]
+2 subsequences :: forall a . [a] -> [[a]]
+2 permutations :: forall a . [a] -> [[a]]
+2 inits :: forall a . [a] -> [[a]]
+2 tails :: forall a . [a] -> [[a]]
+2 mapAccumL
+2 mapAccumR
+### partial functions
+1 chr . abs :: Int -> Char
+1 succ :: Char -> Char
+2 div :: Int -> Int -> Int
+2 mod :: Int -> Int -> Int
+2 (^) :: Int -> Int -> Int
+2 enumFromThenTo :: Int -> Int -> Int -> [Int]
+2 enumFromThenTo :: Char -> Char -> Char -> [Char]
+2 pred :: Char -> Char

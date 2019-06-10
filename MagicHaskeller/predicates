@@ -1,0 +1,48 @@
+( f "abcdef" ( 3::Int ) ( 5::Int ) == "de" ) && f "U" ( - (1::Int)) ( - (1::Int)) == "U" 
+( f ( 4::Int ) [ ( 1::Int ) , ( 2::Int ) , ( 3::Int ) ] == ( 10::Int ) ) && f ( - (1::Int)) [ ] == - (1::Int)
+(f "snbns" && not ( f "smns" ) ) && f  "12345" == False
+(f [ ( ( 3::Int ) + ) , ( * ( 8::Int ) ) ] [ ( 2::Int ) , ( 4::Int ) ] == [ ( 5::Int ) , ( 32::Int ) ] )
+(f [ ( + ( 3::Int ) ) , ( ( 4::Int ) - ) ] ( 5::Int ) == [ ( 8::Int ) , - ( 1::Int ) ] )
+const True ( f :: [ Char ] ) 
+f "56789" (0::Int)== '9' && f "5678910" (1::Int)== '1' 
+f "abbcccbbb" == "abc" 
+f "abbcccbbb" == [ "a" , "bb" , "ccc" , "bbb" ] 
+f "abcd" "efgh" == "aebfcgdh" 
+f "abcde" 'c' == (2::Int)
+f "abcde" (2::Int)== "de" && f "abc" (1::Int)== "c" && f "1h" ( - (1::Int)) == "" 
+f "asddf" == (5::Int)
+f "e" (2::Int)== "ee" && f "r" (3::Int)== "rrr" 
+f "ehog" "hog" && not ( f "hop" "hon" ) 
+f ',' [ "kore" , "wa" , "pen" ] == "kore,wa,pen" 
+f 'c' 'c' && not ( f 'g' 'h' ) 
+f ( ( * ) :: Int -> Int -> Int ) [ (2::Int), (4::Int), (5::Int)] == [ (4::Int), (16::Int), (25::Int)] 
+f ( (3::Int), (4::Int)) == (7::Int)
+f ( * (3::Int)) [ (5::Int), (7::Int)] == [ (15::Int), (21::Int)] 
+f ( - (3::Int)) == Left (3::Int)&& f (4::Int)== Right (4::Int)
+f ( 7::Int ) ( 7::Int ) && not ( f ( 7::Int ) ( 6::Int ) ) 
+f ( Left ( - (3::Int)) ) == (3::Int)&& f ( Right (4::Int)) == (4::Int)
+f ( succ :: Int -> Int ) (1::Int)== (2::Int)
+f (3::Int)"abcde" == 'd' 
+f (3::Int)(5::Int)== [ (3::Int), (4::Int), (5::Int)] 
+f (4::Int)== (24::Int)&& f (5::Int)== (25::Int)
+f (4::Int)[ (1::Int), (2::Int), (3::Int)] == (10::Int)
+f == [ (1::Int), (3::Int)] 
+f True True == True && f False False == True 
+f [ "ABCDE" , "DF" , "1234" , "" ] == [ "" , "DF" , "1234" , "ABCDE" ] 
+f [ ( 'a' , (1::Int)) , ( 'b' , (2::Int)) ] 'b' == Just (2::Int)
+f [ ( (3::Int)* ) , ( (4::Int)+ ) ] (8::Int)== [ (24::Int), (12::Int)] 
+f [ ( (3::Int)+ ) , ( * (8::Int)) ] [ (2::Int), (4::Int)] == [ (5::Int), (32::Int)] 
+f [ ( 6::Int ) , ( 5::Int ) , ( 5::Int ) , ( 3::Int ) , ( 6::Int ) ] == [ ( 3::Int ) , ( 5::Int ) , ( 6::Int ) ] 
+f [ (1::Int), (2::Int), (1::Int), (1::Int)] ~= 0.2 
+f [ (1::Int), (2::Int), (1::Int), (1::Int)] ~= [ 0.2 , 3.0 ] 
+f [ (1::Int), (2::Int), (2::Int), (3::Int), (3::Int), (3::Int), (2::Int), (2::Int), (2::Int)] == [ (1::Int), (2::Int), (3::Int)] 
+f [ (1::Int), (2::Int), (2::Int), (3::Int), (3::Int), (3::Int), (2::Int), (2::Int), (2::Int)] == [ [ (1::Int)] , [ (2::Int), (2::Int)] , [ (3::Int), (3::Int), (3::Int)] , [ (2::Int), (2::Int), (2::Int)] ] 
+f [ (1::Int).. (5::Int)] == (4::Int)&& f [ - (2::Int), - (3::Int)] == ( - (2::Int)) 
+f [ (3::Int), (4::Int)] [ (4::Int), (5::Int)] == [ (7::Int), (9::Int)] 
+f [ True ] [ True ] && not ( f [ True ] [ False ] ) 
+length ( f :: String ) == ( 1::Int ) 
+f [3, 4.5, 7.5] ~= 5.0
+f 3.54 ~= 3.5
+f [3,4,0.2] ~= [9,16,0.04]
+f 3.7 ~= 4
+f [3, 4] [5, 6] ~= [3.5, 4.6]
